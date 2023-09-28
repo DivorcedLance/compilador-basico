@@ -76,13 +76,13 @@ Estados finales: q3
 
 $$
 \begin{aligned}
-q0, \text{si}, - \implies q0 \text{ si} \\
-q0, \text{sino}, \text{si} \implies q0 \text{ sino} \\
-q0, \text{fsi}, \text{sino} \implies q0 \&\& \\
-q0, \text{fsi}, \text{si} \implies q0 \& \\
-q0, \text{mientras}, - \implies q0 \text{ mientras} \\
-q0, \text{fmientras}, \text{mientras} \implies q0 \& \\
-q0, \$, \text{PO} \implies qf - \\
+q0, \text{si}, - &\implies q0 \text{ si} \\
+q0, \text{sino}, \text{si} &\implies q0 \text{ sino} \\
+q0, \text{fsi}, \text{sino} &\implies q0 \&\& \\
+q0, \text{fsi}, \text{si} &\implies q0 \& \\
+q0, \text{mientras}, - &\implies q0 \text{ mientras} \\
+q0, \text{fmientras}, \text{mientras} &\implies q0 \& \\
+q0, \$, \text{PO} &\implies qf - \\
 \end{aligned}
 $$
 
