@@ -95,29 +95,28 @@ Vamos a tener una pila de estados
 
 El scanner llamará al parser con la lista de tokens que tenga hasta ese momento cuando encuentre un salto de linea
 
-El parser leera el primer token de la lista para saber que tipo de token es y en base a eso, sabrá que autómata llamar (solo tendrá las siguientes posibilidades: APD, AFD1, AFD2, AFD3)
+El parser leera el primer token de la lista para saber que tipo de token es y en base a eso, sabrá a que autómata llamar (solo tendrá las siguientes posibilidades: APD, AFD1, AFD2, AFD3)
 
 El parser llamará al autómata correspondiente y le pasará la lista de tokens
 
 Si el automata es uno de los AFD:
 
-  Si el AFD reconoce la lista como válida (es decir, llega a un estado final) entonces el scanner continuará leyendo el código repitiendo el proceso
+* Si el AFD reconoce la lista como válida (es decir, llega a un estado final) entonces el scanner continuará leyendo el código repitiendo el proceso
 
-  Si el AFD no reconoce la lista como válida (es decir, no llega a un estado final) entonces tirará un error de sintaxis especificando la linea del error
+* Si el AFD no reconoce la lista como válida (es decir, no llega a un estado final) entonces tirará un error de sintaxis especificando la linea del error
 
 Si el autómata es el APD:
 
-Si la lista empieza en si o mientras, entonces llamará al AFD4 con la lista de tokens sin el si o mientras inicial. 
+* Si la lista empieza en si o mientras, entonces llamará al AFD4 con la lista de tokens sin el si o mientras inicial. 
 
-  Si el AFD4 reconoce la lista como válida, entonces se llamará al APD con solo el si o mientras.
+- Si el AFD4 reconoce la lista como válida, entonces se llamará al APD con solo el si o mientras.
 
-  Si el AFD4 no reconoce la lista como válida, entonces se dará un error de sintaxis especificando la linea del error.
+- Si el AFD4 no reconoce la lista como válida, entonces se dará un error de sintaxis especificando la linea del error.
 
 Tanto el estado como la pila de AFD se mantendrán en toda la leída del código. 
 
-Si el APD no tiene una regla de transición para el token dado, entonces se dará un error de sintaxis especificando la linea del error.
+* Si el APD no tiene una regla de transición para el token dado, entonces se dará un error de sintaxis especificando la linea del error.
 
-Si el APD sí tiene una regla de transición para el token dado, entonces se regresará al scanner para continuar el proceso.
+* Si el APD sí tiene una regla de transición para el token dado, entonces se regresará al scanner para continuar el proceso.
 
-Al terminar de leer el código se enviará al APD el token de fin de archivo ($). Si la pila está vacia (P0) enconces el código es válido, si no, entonces se dará un error de sintaxis especificando la linea del último token en la pila.
-
+Al terminar de leer el código si la pila está vacia (P0) enconces el código es válido, si no, entonces se dará un error de sintaxis especificando la linea del último token en la pila.
