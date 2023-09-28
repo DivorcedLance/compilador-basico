@@ -14,6 +14,8 @@ Los tokens reconocidos por el proyecto se dividen en categorías. Los principale
 
 ### AFD1: Declaración de Variables
 
+![AFD1](https://github.com/DivorcedLance/compilador-basico/assets/104219610/9936e5b0-3660-4b04-b90c-8f8fe959edf6)
+
 $$
 \begin{aligned}
 q0, \text{entero} \implies q1 \\
@@ -30,6 +32,8 @@ Estados finales: q2, q4
 
 ### AFD2: Imprimir
 
+![AFD2](https://github.com/DivorcedLance/compilador-basico/assets/104219610/7e05df57-3ffa-4b84-b893-00e369d9d299)
+
 $$
 \begin{aligned}
 q0, \text{imprime} \implies q1 \\
@@ -44,6 +48,8 @@ Estados finales: q2
 
 ### AFD3: Asignación
 
+![AFD3](https://github.com/DivorcedLance/compilador-basico/assets/104219610/f8d4937a-3efe-4a29-bf81-a2d27436b9b3)
+
 $$
 \begin{aligned}
 q0, \text{IDENTIFICADOR} \implies q1 \\
@@ -57,6 +63,8 @@ Estado inicial: q0
 Estados finales: q3
 
 ### AFD4: Condición
+
+![AFD4](https://github.com/DivorcedLance/compilador-basico/assets/104219610/83d06a02-d968-44ae-9dbc-3896c2b5e6f8)
 
 $$
 \begin{aligned}
