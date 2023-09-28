@@ -142,7 +142,7 @@ $$
 Estado inicial: q0  
 Estados finales: qf
 
-### Descripción de la implementación del parser
+### Descripción de la implementación
 
 Vamos a tener una pila de estados
 
