@@ -4,8 +4,22 @@
 
 Este proyecto es una implementación de un analizador léxico y sintáctico basado en Autómatas Finitos Determinísticos (AFD) y un Autómata de Pila Determinista (APD). Está diseñado para reconocer y validar un conjunto específico de tokens y estructuras de control en un lenguaje de programación personalizado.
 
-## Implementación del scanner
+### Flujo de Trabajo
 
+1. El scanner invoca al parser cada vez que encuentra un salto de línea, pasándole la lista de tokens recolectados hasta ese momento. Si se encuentra algún token no reconocido, el propio scanner lanza un error de léxico.
+2. El parser identifica qué autómata debe ser llamado para procesar la lista de tokens.
+3. Si se llega a un estado final, el proceso continúa; de lo contrario, se lanza un error de sintaxis.
+
+## Cómo ejecutar el proyecto
+
+Para ejecutar el proyecto, siga estos pasos:
+
+1. Clone el repositorio en su máquina local.
+2. Abra el archivo `index.html` en su navegador.
+3. Ingrese el código a analizar en el área de texto.
+4. Presione el botón "Ejecutar" o utilice el atajo `Ctrl + Enter`.
+
+## Implementación del scanner
 
 La clase `Scanner` tiene como objetivo escanear líneas de código para identificar y categorizar tokens en un lenguaje de programación personalizado. Los tokens se categorizan en diferentes tipos como palabras reservadas, identificadores, operadores, números, símbolos y tokens desconocidos.
 
@@ -187,21 +201,6 @@ Se proporcionan funciones para copiar el código y la salida al portapapeles del
 ### Tratamiento de Errores
 
 El proyecto tiene un sistema robusto para el manejo de errores, que proporciona mensajes de error detallados que especifican el tipo y la línea del error.
-
-### Flujo de Trabajo
-
-1. El scanner invoca al parser cada vez que encuentra un salto de línea, pasándole la lista de tokens recolectados hasta ese momento. Si se encuentra algún token no reconocido, el propio scanner lanza un error de léxico.
-2. El parser identifica qué autómata debe ser llamado para procesar la lista de tokens.
-3. Si se llega a un estado final, el proceso continúa; de lo contrario, se lanza un error de sintaxis.
-
-## Cómo ejecutar el proyecto
-
-Para ejecutar el proyecto, siga estos pasos:
-
-1. Clone el repositorio en su máquina local.
-2. Abra el archivo `index.html` en su navegador.
-3. Ingrese el código a analizar en el área de texto.
-4. Presione el botón "Ejecutar" o utilice el atajo `Ctrl + Enter`.
 
 # Código:
 
