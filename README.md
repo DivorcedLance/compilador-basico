@@ -32,60 +32,9 @@ Se proporcionan funciones para copiar el código y la salida al portapapeles del
 
 El proyecto tiene un sistema robusto para el manejo de errores, que proporciona mensajes de error detallados que especifican el tipo y la línea del error.
 
-## Tokens Iniciales
-
-Los tokens reconocidos por el proyecto se dividen en categorías. Los principales son:
-
-### Palabras Reservadas
-* `si`, `sino`, `fsi`, `mientras`, `fmientras`: Gestionados por APD.
-* `enter`, `real`: Gestionados por AFD1.
-* `imprime`: Gestionado por AFD2.
-
-### Identificadores
-* Gestionados por AFD3.
-
-## Autómatas Finitos Determinísticos (AFD)
-
-### AFD1: Declaración de Variables
-
-$$
-\begin{aligned}
-q0, \text{entero} \implies q1 \\
-q0, \text{real} \implies q1 \\
-q1, \text{IDENTIFICADOR} \implies q2 \\
-q2, \text{=} \implies q3 \\
-q3, \text{NUMERO} \implies q4 \\
-q4, \text{,} \implies q1 \\
-\end{aligned}
-$$
-
-Estado inicial: q0  
-Estados finales: q2, q4
-
-### AFD2: Imprimir
-Estado inicial: q0  
-Estados finales: q2
-
-### AFD3: Asignación
-Estado inicial: q0  
-Estados finales: q3
-
-### AFD4: Condición
-Estado inicial: q0  
-Estados finales: q3
-
-## Autómata de Pila Determinista (APD)
-
-Estado inicial: q0  
-Estados finales: qf
-
-## Implementación del Parser
-
-El parser actúa como intermediario entre el scanner y los autómatas. Se implementa una pila de estados para gestionar el flujo de tokens.
-
 ### Flujo de Trabajo
 
-1. El scanner invoca al parser cada vez que encuentra un salto de línea, pasándole la lista de tokens recolectados hasta ese momento.
+1. El scanner invoca al parser cada vez que encuentra un salto de línea, pasándole la lista de tokens recolectados hasta ese momento. Si se encuentra algún token no reconocido, el propio scanner lanza un error de léxico.
 2. El parser identifica qué autómata debe ser llamado para procesar la lista de tokens.
 3. Si se llega a un estado final, el proceso continúa; de lo contrario, se lanza un error de sintaxis.
 
