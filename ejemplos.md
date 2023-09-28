@@ -62,4 +62,3 @@ sino
 fsi
 imprime promedio
 ```
-```
