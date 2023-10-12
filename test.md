@@ -17,3 +17,28 @@ $$
 & SD(14) &= &\{NUM\} \\
 \end{aligned}
 $$
+
+$$
+\begin{aligned}
+&1. &E &\implies TX \\
+X\\
+&2. &X &\implies +E \\
+&3. &X &\implies -E \\
+&4. &X &\implies \lambda \\
+\\
+&5. &T &\implies FY \\
+Y\\
+&6. &Y &\implies *T \\
+&7. &Y &\implies /T \\
+&8. &Y &\implies \lambda \\
+\\
+&9. &F &\implies GZ \\
+Z\\
+&10. &Z &\implies ^F \\
+&11. &Z &\implies \lambda \\
+G\\
+&12. &G &\implies (E) \\
+&13. &G &\implies ID \\
+&14. &G &\implies NUM \\
+\end{aligned}
+$$
